@@ -8,21 +8,17 @@ get '/' do
 end
 
 
-get '/:player/:computer' do
+get '/:player' do
   player = params[:player]
-  computer = params[:computer]
-  game = Game.new(player, computer)
-  game.play
+  game = Game.new(player)
+  @result = game.play
+  if result == 'scissors'
+    erb(:scissors)
+  elsif result == 'paper'
+    erb(:paper)
+  elsif result == 'rock'
+    erb(:rock)
+  else
+    erb(:draw)
+  end
 end
-
-# get '/scissors/:computer' do
-#   computer = params[:computer]
-#   game = Game.new(scissors, computer)
-#   @scissors = game.play
-# end
-
-# get '/paper/:computer' do
-#   computer = params[:computer]
-#   game = Game.new(paper, computer)
-#   @paper = game.play
-# end
