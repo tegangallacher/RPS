@@ -20,31 +20,31 @@ class Game
       case @player
         when 'rock'
           if computer_choice == 'paper' 
-           result = 'paper'
+           @result = 'paper'
          elsif computer_choice == 'scissors'
-           result = 'rock'
+           @result = 'rock'
          else
-          result = 'draw'
+          @result = 'draw'
           end
         when 'paper'
           if computer_choice == 'rock' 
-           result = 'paper'
+           @result = 'paper'
         elsif computer_choice == 'scissors'
-          result = 'scissors'
+          @result = 'scissors'
         else
-          result = 'draw'
+          @result = 'draw'
           end
     
         when 'scissors'
           if computer_choice == 'rock' 
-            result = 'rock'
+            @result = 'rock'
           elsif computer_choice == 'paper'
-            result = 'scissors'
+            @result = 'scissors'
           else
-          result = 'draw'
+          @result = 'draw'
           end
       end
-      return result
+      return @result
     end 
 end
 

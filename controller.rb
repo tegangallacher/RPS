@@ -12,11 +12,11 @@ get '/:player' do
   player = params[:player]
   game = Game.new(player)
   @result = game.play
-  if result == 'scissors'
+  if @result == 'scissors'
     erb(:scissors)
-  elsif result == 'paper'
+  elsif @result == 'paper'
     erb(:paper)
-  elsif result == 'rock'
+  elsif @result == 'rock'
     erb(:rock)
   else
     erb(:draw)
